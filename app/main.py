@@ -8,11 +8,11 @@ def copy_file(command: str) -> None:
     src, dest = parts[1], parts[2]
 
     if src == dest:
-        print("Source file is equal to Destination!")
+        print("It is impossible to copy yourself.")
         return
 
     try:
         with open(src, "r") as f_src, open(dest, "w") as f_dest:
             f_dest.write(f_src.read())
     except Exception as e:
-        print(f"Error with copying: {e}")
+        print(f"Copy error: {e}")
