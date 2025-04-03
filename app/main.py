@@ -5,14 +5,14 @@ def copy_file(command: str) -> None:
         print("Invalid command!")
         return
 
-    src, dest = parts[1], parts[2]
+    source_file, destination_file = parts[1], parts[2]
 
-    if src == dest:
+    if source_file == destination_file:
         print("It is impossible to copy yourself.")
         return
 
     try:
-        with open(src, "r") as f_src, open(dest, "w") as f_dest:
-            f_dest.write(f_src.read())
+        with open(src, "r") as f_source, open(dest, "w") as f_destination:
+            f_destination.write(f_source.read())
     except Exception as e:
         print(f"Copy error: {e}")
