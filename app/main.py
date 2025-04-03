@@ -12,7 +12,8 @@ def copy_file(command: str) -> None:
         return
 
     try:
-        with open(source_file, "r") as f_source, open(destination_file, "w") as f_destination:
+        with open(source_file, "r") as f_source, \
+        open(destination_file, "w") as f_destination:
             f_destination.write(f_source.read())
     except Exception as e:
         print(f"Copy error: {e}")
